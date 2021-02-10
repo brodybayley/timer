@@ -1,10 +1,15 @@
 // process.stdout.write('\x07');
+// const alarms = [1, 7, 5]
 
-function alertTerminal() {
-  process.stdout.write('\x07');
+function alertTerminal(alarms) {
+  for (const alarm of alarms) {
+    setTimeout(() => {
+      process.stdout.write('\x07');
+    }, alarm * 1000)
+  }
 }
 
-alertTerminal(10, 3, 5);
+alertTerminal(process.argv);
 // const finalString = () => {
 //   let count = 0;
 //   for (const char of sentence) {
