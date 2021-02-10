@@ -1,28 +1,19 @@
-// process.stdout.write('\x07');
-// const alarms = [1, 7, 5]
+const alarms = process.argv.slice(2);
 
 function alertTerminal(alarms) {
   for (const alarm of alarms) {
-    setTimeout(() => {
-      process.stdout.write('\x07');
-    }, alarm * 1000)
+    if (alarm > 0 && alarm === alarm) {
+      setTimeout(() => {
+        process.stdout.write('\x07');
+      }, alarm * 1000)
+    }
   }
 }
 
-alertTerminal(process.argv);
-// const finalString = () => {
-//   let count = 0;
-//   for (const char of sentence) {
-//     setTimeout(() => {
-//       process.stdout.write(char);
-//     }, count * 50);
-//     count++;
-//   }
-
-//   setTimeout(() => {
-//     process.stdout.write('\n');
-//   }, sentence.length * 50);
-// };
+alertTerminal(alarms);
 
 
-// finalString();
+// const alarms = [9, 7, 8, 'k']
+// const numbers = (/^[0-9]+$/);
+// const exclAlph = alarms.value.match(regex);
+// console.log(exclAlph)
